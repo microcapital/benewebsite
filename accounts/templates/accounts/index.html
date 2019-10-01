@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    {% if user.is_authenticated %}
+        <h2>Hello welcome {{ user.username }}</h2>
+
+        <h3>Please enter following school chat rooms are open: </h3>
+        <ul>
+            <li>
+                <a href="/chat/math">Math Chat Room</a>
+            </li>
+            <li>
+                <a href="/chat/science">Science Chat Room</a>
+            </li>
+            <li>
+                <a href="/chat/art">Art Chat Room</a>
+            </li>
+            <li>
+                <a href="/chat/music">Music Chat Room</a>
+            </li>
+            <li>
+                <a href="/chat/history">History Chat Room</a>
+            </li>
+            <li>
+                <a href="/chat/geography">Geography Chat Room</a>
+            </li>
+            <li>
+                <a href="/chat/computer">Computer Chat Room</a>
+            </li>
+        </ul>
+        <div>Or you can <a href="/chat/">create</a> a new chat room then invite people to join. </div>
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
